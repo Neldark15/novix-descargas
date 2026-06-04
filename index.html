@@ -139,7 +139,7 @@
     <a class="btn" id="winBtn" href="#" onclick="return downloadWin(event)">
       <svg viewBox="0 0 24 24" fill="currentColor"><path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.9-1.801"/></svg>
       <div class="btn-label">Descargar Windows</div>
-      <div class="btn-sub">Instalador .exe (64-bit)</div>
+      <div class="btn-sub">Instalador .exe (64-bit) · recomendado</div>
     </a>
 
     <a class="btn" id="macBtn" href="#" onclick="return downloadMac(event)">
@@ -150,12 +150,14 @@
   </div>
 
   <div class="arch-options" style="justify-content:center; margin-bottom:22px;">
+    <a href="#" id="winPortable">Windows portable (sin instalar)</a>
     <a href="#" id="macArm">Mac (Apple Silicon)</a>
     <a href="#" id="macIntel">Mac (Intel)</a>
   </div>
 
   <div class="info">
-    <strong>Windows</strong>: Si Windows muestra "SmartScreen protegió tu PC", clic en <em>"Más información"</em> → <em>"Ejecutar de todos modos"</em>.<br><br>
+    <strong>Windows</strong>: el instalador instala NOVIX una sola vez, arranca rápido y crea un acceso directo en el escritorio. Si aparece "SmartScreen protegió tu PC", clic en <em>"Más información"</em> → <em>"Ejecutar de todos modos"</em>.<br><br>
+    <strong>Windows portable</strong>: no requiere instalación, pero se descomprime en cada ejecución (arranca más lento). Al abrirlo crea un acceso directo "NOVIX" en el escritorio.<br><br>
     <strong>Mac</strong>: La primera vez, click derecho sobre la app → <em>"Abrir"</em> → confirmar. Solo se hace una vez.
   </div>
 
@@ -207,6 +209,7 @@
     return false;
   }
 
+  document.getElementById('winPortable').href = `${latestBase}/NOVIX-portable.exe`;
   document.getElementById('macArm').href  = `${latestBase}/NOVIX-arm64.dmg`;
   document.getElementById('macIntel').href = `${latestBase}/NOVIX.dmg`;
 
